@@ -1,0 +1,49 @@
+Virtual Memory
+=============
+Code needs to be in memory to execute, but entire program rarely used.
+Entire program code not needed at same time
+Program no longer constrained by limits of physical memory
+Each program takes less memory while running :- more programs run at the same time
+Increased CPU utilization and throughput. 
+Each user program runs faster
+
+Virtual Memory – separation of user logical memory from physical memory
+Only part of the program needs to be in memory for execution
+Logical address space can therefore be much larger than physical address space
+Allows address spaces to be shared by several processes
+Allows for more efficient process creation
+More programs running concurrently  increase of Degree of Multiprogramming
+Less I/O needed to load or swap processes
+
+Virtual Address Space – logical view of how process is stored in memory.
+Usually start at address 0, contiguous addresses until end of space
+Meanwhile, physical memory organized in page frames
+MMU must map logical to physical
+Virtual memory can be implemented via:
+Demand paging 
+Demand segmentation
+
+Demand Paging
+==============
+Bring a page into memory only when it is needed
+Less I/O needed, no unnecessary I/O
+Less memory needed 
+Faster response
+More users
+Page is needed  reference to it
+invalid reference  abort
+not-in-memory  bring to memory
+
+Lazy Swapper –
+ never swaps a page into memory unless page will be needed
+Swapper that deals with pages is a Pager
+
+TLB
+-------
+Translation Lookaside buffer
+
+TLB hit -> TLB access time + Main memory access time
+TLB miss -> TLB access time + Main memory access time + Main memory access time
+
+Effective memory access time => (Hit ration) * (TLB hit) + (Miss ratio) * (TLB miss)
+
